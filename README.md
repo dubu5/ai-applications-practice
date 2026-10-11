@@ -2,7 +2,7 @@
 
 손글씨로 그린 숫자(0-9)를 AI가 인식하는 애플리케이션입니다. 데스크톱과 웹 두 가지 버전을 제공합니다.
 
-## 📋 프로젝트 구조
+## 프로젝트 구조
 
 ```
 Study-01/
@@ -19,9 +19,9 @@ Study-01/
 └── README.md
 ```
 
-## 🖥️ Desktop 버전
+## Desktop 버전
 
-**Python + Tkinter GUI 애플리케이션**
+Python + Tkinter GUI 애플리케이션
 
 ### 실행 방법
 ```bash
@@ -38,9 +38,9 @@ python digit_recognition.py
 - 28x28로 리사이징하여 인식
 - 실시간 결과 표시
 
-## 🌐 Web 버전
+## Web 버전
 
-**Flask + HTML5 Canvas 웹 애플리케이션**
+Flask + HTML5 Canvas 웹 애플리케이션
 
 ### 실행 방법
 ```bash
@@ -57,21 +57,21 @@ python app.py
 - RESTful API 기반 예측
 - 모바일 지원 (터치 입력)
 
-## 🔧 기술 스택
+## 기술 스택
 
 ### Desktop 버전
-- **언어**: Python 3.11
-- **GUI**: Tkinter
-- **ML**: TensorFlow/Keras
-- **이미지 처리**: Pillow
+- 언어: Python 3.11
+- GUI: Tkinter
+- ML: TensorFlow/Keras
+- 이미지 처리: Pillow
 
 ### Web 버전
-- **백엔드**: Flask
-- **프론트엔드**: HTML5, CSS3, JavaScript
-- **ML**: TensorFlow/Keras
-- **API**: RESTful
+- 백엔드: Flask
+- 프론트엔드: HTML5, CSS3, JavaScript
+- ML: TensorFlow/Keras
+- API: RESTful
 
-## 📊 모델 정보
+## 모델 정보
 
 ### 아키텍처
 ```
@@ -84,28 +84,28 @@ CNN (Convolutional Neural Network)
 ```
 
 ### 성능
-- **훈련 데이터**: MNIST (60,000개)
-- **테스트 정확도**: ~98-99%
-- **입력**: 28x28 그레이스케일 이미지
-- **출력**: 0-9 확률 분포
+- 훈련 데이터: MNIST (60,000개)
+- 테스트 정확도: ~98-99%
+- 입력: 28x28 그레이스케일 이미지
+- 출력: 0-9 확률 분포
 
-## 🐛 4 편향 문제 & 해결 과정
+## 4 편향 문제 및 해결 과정
 
 ### 문제 상황
-처음 웹 버전 개발 시 어떤 숫자를 그려도 **4로 인식되는 현상** 발생
+처음 웹 버전 개발 시 어떤 숫자를 그려도 4로 인식되는 현상 발생
 
 ### 원인 분석
 
 | 항목 | 문제 | 영향 |
 |------|------|------|
-| **훈련 데이터** | 8x8 기계 생성 숫자 | 손글씨와 완전히 다른 패턴 |
-| **전처리** | 280x280 → 8x8 축소 | 정보 손실로 특정 패턴 편향 |
-| **모델 크기** | 64차원 MLP | 손글씨 인식에 부족 |
-| **정규화** | /16.0 (scikit-learn) | Desktop /255.0과 불일치 |
+| 훈련 데이터 | 8x8 기계 생성 숫자 | 손글씨와 완전히 다른 패턴 |
+| 전처리 | 280x280 → 8x8 축소 | 정보 손실로 특정 패턴 편향 |
+| 모델 크기 | 64차원 MLP | 손글씨 인식에 부족 |
+| 정규화 | /16.0 (scikit-learn) | Desktop /255.0과 불일치 |
 
 ### 해결 방법
 
-✅ **Desktop 버전과 동일하게 통일**
+Desktop 버전과 동일하게 통일
 - 훈련 데이터: MNIST 28x28 (동일)
 - 전처리: 280x280 → 28x28 (동일)
 - 모델: CNN 사용 (동일)
@@ -116,7 +116,7 @@ CNN (Convolutional Neural Network)
 - 모든 숫자가 균등하게 인식됨
 - Desktop과 Web 일관된 결과
 
-## 📝 주요 전처리 단계
+## 주요 전처리 단계
 
 ```python
 1. 색상 반전: 흰 배경, 검은 숫자로 통일
@@ -125,7 +125,7 @@ CNN (Convolutional Neural Network)
 4. Reshape: (28, 28, 1) 형태로 변환
 ```
 
-## 📦 설치 & 의존성
+## 설치 및 의존성
 
 ### Desktop 버전
 ```bash
@@ -137,7 +137,7 @@ pip install tensorflow pillow numpy
 pip install flask tensorflow pillow numpy flask-cors
 ```
 
-## 🎯 사용 방법
+## 사용 방법
 
 ### Desktop
 1. `Run_Digit_Recognition.bat` 실행
@@ -152,7 +152,7 @@ pip install flask tensorflow pillow numpy flask-cors
 4. "Recognize Digit" 버튼 클릭
 5. 확률 분포와 함께 결과 표시
 
-## 🚀 개선 사항
+## 개선 사항
 
 - [x] 4 편향 문제 해결
 - [x] Desktop/Web 동일한 모델 사용
@@ -161,10 +161,10 @@ pip install flask tensorflow pillow numpy flask-cors
 - [ ] 실시간 모델 재훈련
 - [ ] GPU 지원
 
-## 📄 라이센스
+## 라이센스
 
 MIT License
 
-## 👤 작성자
+## 작성자
 
 Claude Haiku 4.5
