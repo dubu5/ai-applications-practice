@@ -1,0 +1,10 @@
+﻿python : Traceback (most recent call last):
+At line:8 char:1
++ python app.py 2>&1 | Tee-Object -FilePath server.log
++ ~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Traceback (most recent call last)::String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+  File "C:\Users\Home\Desktop\VibeCoding\Study-01\web_version\backend\app.py", line 5, in <module>
+    import numpy as np
+ModuleNotFoundError: No module named 'numpy'
