@@ -1,0 +1,19 @@
+{
+  "name": "quiz-game-monorepo",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "apps/web",
+    "apps/server"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspaces",
+    "dev:web": "npm --workspace=@quiz-game/web run dev",
+    "dev:server": "npm --workspace=@quiz-game/server run dev",
+    "build": "npm run build --workspaces",
+    "seed": "npm --workspace=@quiz-game/server run seed",
+    "test": "npm run test --workspaces",
+    "test:integration": "npm --workspace=@quiz-game/server run test:integration"
+  }
+}

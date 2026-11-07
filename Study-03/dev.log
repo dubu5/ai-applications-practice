@@ -1,0 +1,46 @@
+
+> korean-quiz-game@0.1.0 dev
+> vite
+
+
+  [32m[1mVITE[22m v5.4.21[39m  [2mready in [0m[1m449[22m[2m[0m ms[22m
+
+  [32m➜[39m  [1mLocal[22m:   [36mhttp://localhost:[1m5173[22m/[39m
+[2m  [32m➜[39m  [1mNetwork[22m[2m: use [22m[1m--host[22m[2m to expose[22m
+[2mAM 4:41:48[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/App.tsx, /src/index.css[22m
+[2mAM 4:41:53[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/App.tsx, /src/index.css[22m
+[2mAM 4:41:58[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/App.tsx, /src/index.css[22m
+[2mAM 4:42:04[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/App.tsx, /src/index.css[22m
+[2mAM 4:42:09[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/App.tsx, /src/index.css[22m
+[2mAM 4:42:31[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/App.tsx, /src/index.css[22m
+[2mAM 4:42:36[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/App.tsx, /src/index.css[22m
+[2mAM 4:42:44[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/App.tsx, /src/index.css[22m
+[2mAM 4:42:52[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/App.tsx, /src/index.css[22m
+[2mAM 4:55:03[22m [36m[1m[vite][22m[39m changed tsconfig file detected: C:\Users\Home\Desktop\VibeCoding\Study-03\apps\web\tsconfig.json - Clearing cache and forcing full-reload to ensure TypeScript is compiled with updated config values.
+[2mAM 4:55:03[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2mapps/web/index.html[22m
+[2mAM 4:55:03[22m [36m[1m[vite][22m[39m changed tsconfig file detected: C:\Users\Home\Desktop\VibeCoding\Study-03\tsconfig.json - Clearing cache and forcing full-reload to ensure TypeScript is compiled with updated config values.
+[2mAM 4:55:03[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/App.tsx, /src/index.css[22m
+[2mAM 4:55:03[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2msrc/main.tsx[22m
+[2mAM 4:55:03[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/index.css[22m
+[2mAM 4:55:03[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/common/Button.tsx[22m
+[2mAM 4:55:03[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/common/Timer.tsx[22m
+[2mAM 4:55:03[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/common/ProgressBar.tsx[22m
+[2mAM 4:55:03[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/screens/CategoryIntroScreen.tsx[22m
+[2mAM 4:55:03[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/screens/CategorySummaryScreen.tsx[22m
+[2mAM 4:55:03[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/screens/FeedbackScreen.tsx[22m
+[2mAM 4:55:03[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/screens/GameRulesScreen.tsx[22m
+[2mAM 4:55:03[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/screens/NicknameScreen.tsx[22m
+[2mAM 4:55:03[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/screens/ResultScreen.tsx[22m
+[2mAM 4:55:03[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/screens/QuizScreen.tsx[22m
+[2mAM 4:55:03[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/screens/StartScreen.tsx[22m
+[2mAM 4:55:03[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2msrc/data/questions.json[22m
+[2mAM 4:55:03[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2msrc/features/quiz/quizEngine.test.ts[22m
+[2mAM 4:55:03[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2msrc/features/quiz/quizEngine.ts[22m
+[2mAM 4:55:03[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2msrc/features/quiz/scoreCalculator.test.ts[22m
+[2mAM 4:55:03[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2msrc/features/quiz/scoreCalculator.ts[22m
+[2mAM 4:55:03[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2msrc/features/quiz/types.ts[22m
+[2mAM 4:55:03[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2msrc/features/storage/sessionStorage.ts[22m
+[2mAM 4:55:03[22m [36m[1m[vite][22m[39m [32mvite.config.ts changed, restarting server...[39m
+[2mAM 4:55:03[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2mtailwind.config.js[22m
+[2mAM 4:55:03[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2mindex.html[22m
+[2mAM 4:55:03[22m [36m[1m[vite][22m[39m server restarted.
