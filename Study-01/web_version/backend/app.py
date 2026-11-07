@@ -17,6 +17,14 @@ def build_and_load_model():
     """Build and train a CNN model using MNIST dataset - matching desktop version."""
     global model
 
+    # Try to load existing model
+    import os
+    if os.path.exists('digit_recognition_model.h5'):
+        print("Loading pre-trained model...")
+        model = keras.models.load_model('digit_recognition_model.h5')
+        print("Model loaded successfully!")
+        return
+
     print("Loading MNIST dataset...")
     try:
         import tensorflow as tf
@@ -70,6 +78,10 @@ def build_and_load_model():
         # Evaluate model
         test_loss, test_accuracy = model.evaluate(x_test, y_test, verbose=0)
         print(f"Test accuracy: {test_accuracy * 100:.2f}%")
+
+        # Save model for next run
+        model.save('digit_recognition_model.h5')
+        print("Model saved: digit_recognition_model.h5")
 
     except ImportError:
         print("ERROR: TensorFlow not installed")

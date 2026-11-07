@@ -1,0 +1,712 @@
+/* ============================================================
+   CSS Variables & Theme
+   ============================================================ */
+
+:root {
+  /* Colors */
+  --color-work: #ff6b6b;
+  --color-personal: #4ecdc4;
+  --color-study: #ffd93d;
+
+  /* Light theme */
+  --bg-primary: #ffffff;
+  --bg-secondary: #fafafa;
+  --bg-tertiary: #f5f5f5;
+  --text-primary: #333333;
+  --text-secondary: #666666;
+  --text-tertiary: #999999;
+  --border-color: #e0e0e0;
+  --border-light: #f0f0f0;
+  --success-color: #4caf50;
+  --error-color: #f44336;
+  --error-bg: #ffebee;
+  --error-border: #ffcdd2;
+
+  /* Spacing */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 12px;
+  --spacing-lg: 16px;
+  --spacing-xl: 24px;
+
+  /* Touch */
+  --touch-target: 44px;
+}
+
+html.dark-mode {
+  --bg-primary: #1e1e1e;
+  --bg-secondary: #2a2a2a;
+  --bg-tertiary: #333333;
+  --text-primary: #e0e0e0;
+  --text-secondary: #b0b0b0;
+  --text-tertiary: #808080;
+  --border-color: #404040;
+  --border-light: #2a2a2a;
+  --error-bg: #5d1f1f;
+  --error-border: #8b3a3a;
+}
+
+/* ============================================================
+   Global Styles
+   ============================================================ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background-color: var(--bg-tertiary);
+  color: var(--text-primary);
+  padding: var(--spacing-sm);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+#app {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: var(--bg-primary);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: var(--spacing-lg);
+}
+
+/* ============================================================
+   Accessibility
+   ============================================================ */
+
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--success-color);
+  outline-offset: 2px;
+}
+
+a:focus-visible {
+  outline: 2px solid var(--success-color);
+  outline-offset: 2px;
+}
+
+/* 최소 터치 영역 44px */
+button,
+input,
+select {
+  min-height: var(--touch-target);
+}
+
+/* 색 대비 확보 */
+label {
+  color: var(--text-primary);
+}
+
+/* ============================================================
+   Header & Progress
+   ============================================================ */
+
+header {
+  margin-bottom: var(--spacing-lg);
+}
+
+#header-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--spacing-xs);
+}
+
+#app-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+  flex: 1;
+  text-align: center;
+}
+
+#theme-toggle {
+  padding: var(--spacing-xs) var(--spacing-sm);
+  background: none;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 18px;
+  min-width: 44px;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+#theme-toggle:hover {
+  background-color: var(--bg-secondary);
+  border-color: var(--text-secondary);
+}
+
+#theme-toggle:focus-visible {
+  outline: 2px solid var(--success-color);
+  outline-offset: 2px;
+}
+
+#today-date {
+  text-align: center;
+}
+
+#today-date {
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+#storage-error {
+  padding: var(--spacing-md) var(--spacing-lg);
+  background-color: var(--error-bg);
+  border: 1px solid var(--error-border);
+  border-radius: 4px;
+  font-size: 13px;
+  color: var(--error-color);
+  margin-bottom: var(--spacing-lg);
+  font-weight: 500;
+}
+
+#progress-section {
+  margin-bottom: var(--spacing-lg);
+  padding-bottom: var(--spacing-lg);
+  border-bottom: 2px solid var(--border-light);
+}
+
+#overall-progress {
+  margin-bottom: var(--spacing-lg);
+  padding-bottom: var(--spacing-lg);
+}
+
+#progress-info {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-md);
+}
+
+#progress-bar {
+  width: 100%;
+  height: 12px;
+  background-color: var(--border-color);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+#progress-fill {
+  height: 100%;
+  background-color: var(--success-color);
+  transition: width 0.3s ease;
+}
+
+#category-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: var(--spacing-md);
+}
+
+.category-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: var(--spacing-sm);
+  background-color: var(--bg-secondary);
+  border-radius: 4px;
+}
+
+.category-stat-label {
+  font-size: 11px;
+  color: var(--text-tertiary);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.category-stat-bar {
+  width: 100%;
+  height: 4px;
+  background-color: var(--border-color);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.category-stat-fill {
+  height: 100%;
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+#completion-message {
+  padding: var(--spacing-md) var(--spacing-lg);
+  background-color: #e8f5e9;
+  border-left: 4px solid var(--success-color);
+  border-radius: 4px;
+  font-size: 14px;
+  color: #2e7d32;
+  font-weight: 500;
+  margin-bottom: var(--spacing-lg);
+}
+
+html.dark-mode #completion-message {
+  background-color: #1b5e20;
+  color: #81c784;
+}
+
+/* ============================================================
+   Input Section
+   ============================================================ */
+
+#input-section {
+  margin-bottom: var(--spacing-lg);
+}
+
+#input-group {
+  display: flex;
+  gap: var(--spacing-sm);
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+#auto-category-label {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+  cursor: pointer;
+  color: var(--text-secondary);
+  user-select: none;
+}
+
+#auto-category-checkbox {
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+  accent-color: var(--success-color);
+}
+
+#todo-input {
+  flex: 1;
+  min-width: 200px;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  font-size: 14px;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: border-color 0.2s;
+}
+
+#todo-input:hover {
+  border-color: var(--text-secondary);
+}
+
+#todo-input:focus {
+  border-color: var(--success-color);
+  box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.1);
+}
+
+#category-select {
+  padding: var(--spacing-sm) var(--spacing-md);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  font-size: 14px;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+
+#category-select:hover {
+  border-color: var(--text-secondary);
+}
+
+#category-select:focus {
+  border-color: var(--success-color);
+}
+
+#add-btn {
+  padding: var(--spacing-sm) var(--spacing-lg);
+  background-color: var(--success-color);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: background-color 0.2s;
+}
+
+#add-btn:hover {
+  background-color: #45a049;
+}
+
+#add-btn:active {
+  transform: scale(0.98);
+}
+
+/* ============================================================
+   Filter Tabs
+   ============================================================ */
+
+#filter-tabs {
+  display: flex;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-lg);
+  border-bottom: 1px solid var(--border-color);
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+#list-actions {
+  display: flex;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-lg) !important;
+  flex-wrap: wrap;
+}
+
+#list-actions button {
+  padding: var(--spacing-xs) var(--spacing-md);
+  background-color: var(--bg-secondary);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 500;
+  transition: background-color 0.2s, border-color 0.2s;
+  min-height: 44px;
+}
+
+#clear-completed-btn {
+  display: none;
+}
+
+#list-actions button:hover {
+  background-color: var(--bg-tertiary);
+  border-color: var(--text-secondary);
+}
+
+#list-actions button:focus-visible {
+  outline: 2px solid var(--success-color);
+  outline-offset: 2px;
+}
+
+.filter-tab {
+  padding: var(--spacing-sm) var(--spacing-md);
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: var(--text-secondary);
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: color 0.2s, border-color 0.2s;
+  min-height: 44px;
+}
+
+.filter-tab:hover {
+  color: var(--text-primary);
+}
+
+.filter-tab.active {
+  color: var(--success-color);
+  border-bottom-color: var(--success-color);
+}
+
+/* ============================================================
+   Todo List
+   ============================================================ */
+
+#todo-list {
+  list-style: none;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-bottom: 1px solid var(--border-light);
+  font-size: 14px;
+  transition: background-color 0.2s;
+  min-height: 44px;
+}
+
+.todo-item:hover {
+  background-color: var(--bg-secondary);
+}
+
+.todo-checkbox {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  accent-color: var(--success-color);
+}
+
+.todo-title {
+  flex: 1;
+  min-width: 0;
+  word-break: break-word;
+  cursor: text;
+  user-select: none;
+  color: var(--text-primary);
+}
+
+.todo-title.completed {
+  text-decoration: line-through;
+  color: var(--text-tertiary);
+}
+
+.todo-category {
+  flex-shrink: 0;
+  padding: 2px 8px;
+  border-radius: 3px;
+  font-size: 11px;
+  color: white;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.todo-edit-btn,
+.todo-delete-btn {
+  flex-shrink: 0;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  background: none;
+  border: 1px solid var(--border-color);
+  border-radius: 3px;
+  font-size: 12px;
+  cursor: pointer;
+  color: var(--text-secondary);
+  transition: background-color 0.2s, border-color 0.2s;
+  min-height: 44px;
+  min-width: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.todo-edit-btn:hover,
+.todo-delete-btn:hover {
+  background-color: var(--bg-secondary);
+  border-color: var(--text-secondary);
+}
+
+.todo-edit-btn:focus-visible,
+.todo-delete-btn:focus-visible {
+  outline: 2px solid var(--success-color);
+  outline-offset: 2px;
+  border-color: var(--success-color);
+}
+
+.todo-item.editing {
+  flex-wrap: wrap;
+}
+
+.todo-item.editing .todo-checkbox {
+  flex-basis: 100%;
+}
+
+.todo-item.editing .todo-title {
+  display: none;
+}
+
+.todo-item.editing .todo-edit-input {
+  flex: 1;
+  min-width: 200px;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border: 1px solid var(--success-color);
+  border-radius: 3px;
+  font-size: 14px;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+.todo-item.editing .todo-edit-input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
+}
+
+.todo-item.editing .todo-category-select {
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border: 1px solid var(--border-color);
+  border-radius: 3px;
+  font-size: 12px;
+  cursor: pointer;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+.todo-item.editing .todo-edit-btn,
+.todo-item.editing .todo-delete-btn {
+  display: none;
+}
+
+/* ============================================================
+   Empty State
+   ============================================================ */
+
+#empty-state {
+  text-align: center;
+  padding: var(--spacing-xl) var(--spacing-lg);
+  color: var(--text-tertiary);
+}
+
+#empty-message {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* ============================================================
+   Undo Section
+   ============================================================ */
+
+#undo-section {
+  padding: var(--spacing-md) var(--spacing-lg);
+  background-color: #e8f5e9;
+  border-top: 1px solid var(--border-color);
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-md);
+  z-index: 100;
+}
+
+#undo-section.show {
+  display: flex;
+}
+
+#undo-message {
+  font-size: 13px;
+  color: #2e7d32;
+  flex: 1;
+}
+
+#undo-btn {
+  padding: var(--spacing-xs) var(--spacing-lg);
+  background-color: var(--success-color);
+  color: white;
+  border: none;
+  border-radius: 3px;
+  font-size: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: background-color 0.2s;
+  min-height: 44px;
+}
+
+#undo-btn:hover {
+  background-color: #45a049;
+}
+
+#undo-btn:focus-visible {
+  outline: 2px solid white;
+  outline-offset: 2px;
+}
+
+html.dark-mode #undo-section {
+  background-color: #1b5e20;
+}
+
+html.dark-mode #undo-message {
+  color: #81c784;
+}
+
+/* ============================================================
+   Responsive Design
+   ============================================================ */
+
+@media (max-width: 480px) {
+  body {
+    padding: var(--spacing-xs);
+  }
+
+  #app {
+    padding: var(--spacing-md);
+    border-radius: 4px;
+  }
+
+  header {
+    margin-bottom: var(--spacing-md);
+  }
+
+  #app-title {
+    font-size: 20px;
+  }
+
+  #input-group {
+    gap: var(--spacing-xs);
+  }
+
+  #todo-input,
+  #category-select {
+    min-width: 0;
+  }
+
+  .todo-item {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    gap: var(--spacing-xs);
+  }
+
+  .todo-edit-btn,
+  .todo-delete-btn {
+    padding: var(--spacing-xs) 4px;
+    font-size: 11px;
+  }
+
+  #filter-tabs {
+    gap: 0;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .filter-tab {
+    flex: 1;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    font-size: 12px;
+  }
+
+  #undo-section {
+    flex-wrap: wrap;
+  }
+
+  #undo-message {
+    flex-basis: 100%;
+  }
+
+  #undo-btn {
+    flex: 1;
+  }
+}
+
+/* ============================================================
+   Print Styles
+   ============================================================ */
+
+@media print {
+  body {
+    background: white;
+  }
+
+  #input-section,
+  #undo-section,
+  .todo-edit-btn,
+  .todo-delete-btn {
+    display: none;
+  }
+}

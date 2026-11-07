@@ -131,6 +131,10 @@ class DigitRecognitionApp:
         test_loss, test_accuracy = self.model.evaluate(x_test, y_test, verbose=0)
         print(f"Test accuracy: {test_accuracy * 100:.2f}%")
 
+        # Save model
+        self.model.save('digit_recognition_model.h5')
+        print("Model saved: digit_recognition_model.h5")
+
     def start_draw(self, event):
         """Start drawing when mouse is pressed."""
         self.last_x = event.x

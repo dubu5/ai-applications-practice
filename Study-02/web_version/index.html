@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>할 일 관리</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+    <!-- 접근성: 알림 영역 -->
+    <div id="aria-live-region" aria-live="polite" aria-atomic="true" style="position: absolute; left: -10000px;"></div>
+
+    <!-- 저장 오류 안내 (화면 상단) -->
+    <div id="storage-error" role="alert" style="display: none;"></div>
+
+    <!-- 헤더와 진행률 영역 -->
+    <header id="header">
+      <div id="header-top">
+        <h1 id="app-title">할 일 관리</h1>
+        <button id="theme-toggle" aria-label="다크 모드 토글">🌙</button>
+      </div>
+      <p id="today-date"></p>
+    </header>
+
+    <section id="progress-section">
+      <div id="overall-progress">
+        <div id="progress-info">
+          <span id="progress-text"></span>
+        </div>
+        <div id="progress-bar">
+          <div id="progress-fill"></div>
+        </div>
+      </div>
+      <div id="category-progress">
+        <div id="category-stats"></div>
+      </div>
+    </section>
+
+    <!-- 입력 영역 -->
+    <section id="input-section" aria-label="할 일 추가">
+      <div id="input-group">
+        <input
+          id="todo-input"
+          type="text"
+          placeholder="할 일을 입력하세요"
+          maxlength="100"
+          aria-label="새로운 할 일 입력"
+        >
+        <label id="auto-category-label" style="display: flex; align-items: center; gap: 4px; font-size: 12px; white-space: nowrap; cursor: pointer;">
+          <input
+            id="auto-category-checkbox"
+            type="checkbox"
+            checked
+            aria-label="자동 카테고리 분류"
+            style="cursor: pointer;"
+          >
+          자동
+        </label>
+        <select id="category-select" aria-label="카테고리 선택">
+          <option value="work">업무</option>
+          <option value="personal">개인</option>
+          <option value="study">공부</option>
+        </select>
+        <button id="add-btn" aria-label="할 일 추가 (Enter)">추가</button>
+      </div>
+    </section>
+
+    <!-- 필터 탭과 목록 영역 -->
+    <section id="list-section">
+      <div id="filter-tabs">
+        <button class="filter-tab" data-filter="all" aria-label="모든 할 일 보기">전체</button>
+        <button class="filter-tab" data-filter="work" aria-label="업무 할 일 보기">업무</button>
+        <button class="filter-tab" data-filter="personal" aria-label="개인 할 일 보기">개인</button>
+        <button class="filter-tab" data-filter="study" aria-label="공부 할 일 보기">공부</button>
+      </div>
+
+      <div id="list-actions" style="display: none; margin-bottom: 12px; gap: 8px; display: flex;">
+        <button id="clear-completed-btn" aria-label="완료된 항목 모두 삭제">완료 항목 지우기</button>
+        <button id="export-btn" aria-label="JSON 파일로 내보내기">내보내기</button>
+        <label id="import-label" style="display: flex; align-items: center; cursor: pointer; gap: 4px;">
+          <input type="file" id="import-file" accept=".json" style="display: none;" aria-label="JSON 파일 가져오기">
+          <span style="padding: var(--spacing-xs) var(--spacing-md); background-color: var(--bg-secondary); color: var(--text-secondary); border: 1px solid var(--border-color); border-radius: 4px; font-size: 12px; font-weight: 500; white-space: nowrap;">가져오기</span>
+        </label>
+      </div>
+
+      <div id="empty-state" style="display: none;">
+        <p id="empty-message"></p>
+      </div>
+
+      <ul id="todo-list"></ul>
+    </section>
+
+    <!-- 완료 상태 메시지 -->
+    <div id="completion-message" role="status" aria-live="polite" style="display: none;"></div>
+  </div>
+
+  <!-- 삭제 실행 취소 섹션 -->
+  <div id="undo-section" role="region" aria-label="실행 취소">
+    <span id="undo-message"></span>
+    <button id="undo-btn" aria-label="마지막 삭제한 항목 복원">실행 취소</button>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
