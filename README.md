@@ -54,7 +54,7 @@ python app.py  # http://localhost:5000
 - 우선순위 관리
 - 진행 상태 추적
 
-### 📁 폴더
+### 폴더
 - `todo-app/` — 메인 애플리케이션
 - `web_version/` — 웹 기반 버전
 
